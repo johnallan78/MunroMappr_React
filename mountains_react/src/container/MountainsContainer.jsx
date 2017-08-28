@@ -1,13 +1,19 @@
 import React from 'react';
 import Request from 'superagent'
-import MapContainer from './MapContainer.jsx'
+// import MapView from './MapView.jsx'
 import _ from 'lodash'
+import MapContainer from './MapContainer.jsx'
+
 
 class MountainsContainer extends React.Component{
 
   constructor(props){
     super(props)
-    this.state = {}
+    this.state = {
+      initialLat: 56.190284,
+      initialLng: -4.633008,
+      mountains: []
+    }
   }
 
   componentWillMount(){
@@ -19,14 +25,16 @@ class MountainsContainer extends React.Component{
       });
     });
   }
-
   render(){
     var mountains = _.map(this.state.mountains, (mountain, i)=>{
       return <li key={i}> {mountain.name} {mountain.height} </li>;
     });
     return <div>
       <ul>{mountains}</ul>
-      <MapContainer />
+      <MapContainer 
+        initialLat={this.state.initialLat} 
+        initialLng={this.state.initialLng} 
+        mountains={this.state.mountains} />
     </div>;
   }
 }
