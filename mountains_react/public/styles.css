@@ -1,0 +1,30 @@
+
+.main{
+  display: flex;
+  
+}
+
+
+h1 {
+  display: flex;
+  justify-content: center;;
+}
+
+
+
+.checkbox{
+  display:flex;
+  justify-content: flex-start;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+.checkbox-and-menu{
+  display: flex;
+  flex-direction: column;
+}
+
+.map-container{
+  height:500px;
+  width:500px;
+}
