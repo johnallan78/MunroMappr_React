@@ -4,6 +4,7 @@ import Request from 'superagent'
 import MapContainer from './MapContainer.jsx'
 import MountainSelector from '../components/MountainSelector.jsx'
 import CheckBox from '../components/CheckBox.jsx'
+import Dropdown from '../components/Dropdown.jsx'
 
 var CheckBoxList = require('react-checkbox-list');
 
@@ -42,8 +43,20 @@ class MountainsContainer extends React.Component{
     
     return(
       <div>
-      <h1>MunroMap</h1>
+      <header className='page-header'>
+        <div className= 'header-container'>
+          <h1>MunroMap</h1>
+          <p>Find out where to bag your next Munro, plan a trip and check them off!</p>
+        </div>
+      </header> 
+      <div className='sub-header'>
+        <div className='sub-header-container'>
+            <a href= "https://github.com/johnallan78" className="page-subheader-link" target="blank">Code and Docs on GitHub</a>
+            
+        </div>
+      </div>     
       <div className='main'>
+
       <div className='checkbox-and-menu'>
       <div className="mountain-selector">
       <MountainSelector

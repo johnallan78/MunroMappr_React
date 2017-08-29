@@ -13,6 +13,7 @@
     "google-maps-react": "^1.1.0",
     "leaflet": "^1.2.0",
     "mapbox-gl": "^0.39.1",
-    "react-leaflet": "^1.6.4"
+    "react-leaflet": "^1.6.4",
+    "react-onclickoutside": "^6.5.0"
   }
 }

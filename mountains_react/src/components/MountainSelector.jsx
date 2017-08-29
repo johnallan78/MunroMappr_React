@@ -18,10 +18,7 @@ handleChange(event){
   });
   const selectedMountain = this.props.mountains[newIndex];
   this.props.mountain(selectedMountain);
-  
-
 }
-
 
 render(){
   const styles = {

@@ -34,7 +34,10 @@ render(){
   
 
   return(
+    <div>
+    <h3 div id="check-box-header"> Check List </h3>
     <CheckBoxList ref="chkboxList" defaultData={data} onChange={this.handleCheckboxListChange} />
+    </div>
     )
   }
 }
