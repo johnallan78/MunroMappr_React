@@ -6,9 +6,8 @@ import MapContainerCentral from './MapContainerCentral.jsx'
 import MountainSelector from '../components/MountainSelector.jsx'
 import CheckBox from '../components/CheckBox.jsx'
 import CheckBoxCentral from '../components/CheckBoxCentral.jsx'
-import Dropdown from '../components/Dropdown.jsx'
+import WeatherComponent from '../components/WeatherComponent.jsx'
 
-var CheckBoxList = require('react-checkbox-list');
 
 
 
@@ -20,7 +19,9 @@ class MountainsContainer extends React.Component{
     this.state = {
       initialLat: 56.4354,
       initialLng: -4.4135,
-      mountains: []
+      mountains: [],
+      weather: [],
+      temperature: []
     }
   }
 
@@ -34,6 +35,17 @@ class MountainsContainer extends React.Component{
     });
   }
 
+  componentDidMount(){
+    var url = "http://api.openweathermap.org/data/2.5/weather?lat=56&lon=-4&APPID=1bdaa09714df746155e89a957b3d97b6";
+    Request.get(url).then((response)=>{
+      this.setState({
+        temperature: response.body.main,
+        weather: response.body.weather[0]
+      });
+    });
+    
+  }
+
   setMountain(mountain){
       this.setState({
           mountain: mountain
@@ -45,19 +57,27 @@ class MountainsContainer extends React.Component{
     
     return(
       <div>
+      <div className='weather'>
+        <WeatherComponent 
+          weather={this.state.weather}
+          temperature={this.state.temperature}
+        />
+      </div>
       <header className='page-header'>
         <div className= 'header-container'>
-          <h1>Munro Mapper</h1>
+          <h1>Munro Mappr &trade; </h1>
 
-          <p>Find out where to bag your next Munro, plan a trip, bag a biggie and check it off!</p>
+          <p>Find out where to bag your next Munro, plan a trip, bag a biggie and tick it off!</p>
         </div>
+        
       </header> 
       <div className='sub-header'>
         <div className='sub-header-container'>
-            <a href= "https://github.com/johnallan78" className="page-subheader-link" target="blank">Code and Docs on GitHub</a>
+            <a href= "https://github.com/johnallan78" className="page-subheader-link" target="blank">Mappr Code and Docs on GitHub</a>
         </div>
       </div>     
       <div className='main'>
+
       <div className='checkbox-and-menu'>
           <div className="mountain-selector">
              <MountainSelector
@@ -83,6 +103,9 @@ class MountainsContainer extends React.Component{
         initialLng={this.state.initialLng} 
         mountains={this.state.mountains}
         mountain={this.setMountain.bind(this)}
+        selectedMountainLat={this.state.selectedMountainLat}
+        selectedMountainLng={this.state.selectedMountainLng}
+
       />
       
       <div className= "map-container-central">

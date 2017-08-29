@@ -1,6 +1,7 @@
 import React from 'react';
 
-import MountainsContainer from '../container/MountainsContainer.jsx';
+import MapContainer from '../container/MapContainer.jsx'
+
 
 class MountainSelector extends React.Component{
 
@@ -13,11 +14,18 @@ class MountainSelector extends React.Component{
 
 handleChange(event){
   var newIndex = event.target.value;
-  this.setState({
-    selectedIndex: newIndex
-  });
   const selectedMountain = this.props.mountains[newIndex];
-  const newMountain = this.props.mountain(selectedMountain);
+  const selectedMountainLat = selectedMountain.lat
+  const selectedMountainLng = selectedMountain.lon
+  this.setState({
+    selectedIndex: newIndex,
+    selectedMountainLat: selectedMountainLat,
+    selectedMountainLng: selectedMountainLng
+  });
+  
+  console.log(selectedMountainLat)
+  console.log(selectedMountainLng)
+  
 }
 
 render(){
@@ -29,15 +37,22 @@ render(){
     color: 'black'
 
   };
+
+  
+
+
   
   const options = this.props.mountains.map((mountain, index) => {
     return <option value={index} key={index}>{mountain.name} {mountain.height}</option>
   })
   
   return(
-    <select style={styles} id="mountain"  placeholder="HeightChecker" onChange={this.handleChange.bind(this)}>
+    
+   
+    <select style={styles} id="mountain"   onChange={this.handleChange.bind(this)}>
     {options}
     </select>
+    
     );
   }
 

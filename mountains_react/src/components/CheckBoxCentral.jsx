@@ -1,5 +1,4 @@
 import React from 'react';
-import MountainsContainer from '../container/MountainsContainer.jsx';
 
 var CheckBoxList = require('react-checkbox-list');
 

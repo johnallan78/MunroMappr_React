@@ -1,5 +1,4 @@
 import React from 'react';
-import MountainsContainer from '../container/MountainsContainer.jsx';
 
 var CheckBoxList = require('react-checkbox-list');
 
@@ -61,7 +60,7 @@ render(){
 
   return(
     <div>
-    <h3 div id="check-box-header"> Southern Highlands </h3>
+    <h3 > Southern Highlands </h3>
     <CheckBoxList ref="chkboxList" defaultData={data} onChange={this.handleCheckboxListChange} />
     </div>
     )

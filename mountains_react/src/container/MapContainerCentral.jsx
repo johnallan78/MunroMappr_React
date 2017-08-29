@@ -29,7 +29,7 @@ export class MapContainerCentral extends React.Component {
     render() {
 
       
-      var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+      var iconBase = 'http://findicons.com/files/icons/2534/aroma/24/pin_location_red.png';
       var markers = this.props.mountains.map((mountain) => {
         return <Marker
           key={mountain.id}
@@ -40,7 +40,7 @@ export class MapContainerCentral extends React.Component {
             lng: mountain.lon,
           }}
           onClick={this.onMarkerClick}
-          icon= {iconBase + 'placemark_circle_highlight.png'}
+          icon= {iconBase}
 
 
         />

@@ -1,6 +1,8 @@
 import React from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
+import MountainSelector from '../components/MountainSelector.jsx'
+
 
  
 
@@ -17,6 +19,7 @@ export class MapContainer extends React.Component {
      this.onMarkerClick = this.onMarkerClick.bind(this);
    }
 
+   
 
   onMarkerClick(props, marker , e){
     this.setState({
@@ -29,7 +32,7 @@ export class MapContainer extends React.Component {
     render() {
 
       
-      var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+      var iconBase = 'http://findicons.com/files/icons/2534/aroma/24/pin_location_blue.png';
       var markers = this.props.mountains.map((mountain) => {
         return <Marker
           key={mountain.id}
@@ -40,7 +43,7 @@ export class MapContainer extends React.Component {
             lng: mountain.lon,
           }}
           onClick={this.onMarkerClick}
-          icon= {iconBase + 'placemark_circle_highlight.png'}
+          icon= {iconBase}
 
 
         />
@@ -55,7 +58,8 @@ export class MapContainer extends React.Component {
     }
 
     return (
-      <Map google={this.props.google} 
+      <Map 
+      google={this.props.google} 
       zoom={10}
       style={style}
       clickableIcons={false}
@@ -63,6 +67,10 @@ export class MapContainer extends React.Component {
                     lat: this.props.initialLat,
                     lng: this.props.initialLng
                   }}
+      //  setCenter={{
+      //   lat: this.props.selectedMountainLat,
+      //   lng: this.props.selectedMountainLng
+      // }}            
       >
       {markers}
       <InfoWindow
