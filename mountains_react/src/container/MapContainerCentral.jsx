@@ -5,7 +5,7 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
  
 
 
-export class MapContainer extends React.Component {
+export class MapContainerCentral extends React.Component {
 
   constructor(props) {
      super(props);
@@ -60,8 +60,8 @@ export class MapContainer extends React.Component {
       style={style}
       clickableIcons={false}
       initialCenter={{
-                    lat: this.props.initialLat,
-                    lng: this.props.initialLng
+                    lat: 56.6739,
+                    lng: -5.1337
                   }}
       >
       {markers}
@@ -80,4 +80,4 @@ export class MapContainer extends React.Component {
  
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyBIZpXnFi8_N3Zu3-gKl6EurBIr4DTeGMo'
-})(MapContainer)
+})(MapContainerCentral)

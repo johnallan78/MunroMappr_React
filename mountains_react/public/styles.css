@@ -18,7 +18,12 @@
 
 .main{
   display: flex;
-  
+  padding-top: 70px;
+  background-color: #fafafa;
+}
+
+.mountain-selector{
+  padding-left: 15px;
 }
 
 
@@ -58,11 +63,20 @@ a{
 
 
 
-.checkbox{
+.checkbox  {
   display:flex;
   justify-content: flex-start;
-  padding-top: 5px;
+  padding-top: 3px;
   padding-right: 5px;
+  padding-left: 15px;
+}
+
+.check-box-central {
+  display:flex;
+  justify-content: flex-start;
+  padding-top: 3px;
+  padding-right: 5px;
+  padding-left: 15px;
 }
 
 .checkbox-and-menu{
@@ -73,4 +87,24 @@ a{
 .map-container{
   height:500px;
   width:500px;
+}
+
+.map-container-central{
+
+  padding-top: 948px;
+}
+
+.page-footer {
+  
+  color: #999;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.footer-container{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  padding: 0 30px;
 }

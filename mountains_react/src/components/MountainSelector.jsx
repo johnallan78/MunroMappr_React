@@ -17,7 +17,7 @@ handleChange(event){
     selectedIndex: newIndex
   });
   const selectedMountain = this.props.mountains[newIndex];
-  this.props.mountain(selectedMountain);
+  const newMountain = this.props.mountain(selectedMountain);
 }
 
 render(){
@@ -26,6 +26,7 @@ render(){
     border: '2px solid black',
     width: '200px',
     height: '25px',
+    color: 'black'
 
   };
   
@@ -34,7 +35,7 @@ render(){
   })
   
   return(
-    <select style={styles} id="mountain"  onChange={this.handleChange.bind(this)}>
+    <select style={styles} id="mountain"  placeholder="HeightChecker" onChange={this.handleChange.bind(this)}>
     {options}
     </select>
     );
