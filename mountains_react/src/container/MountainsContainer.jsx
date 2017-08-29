@@ -52,7 +52,6 @@ class MountainsContainer extends React.Component{
       <div className='sub-header'>
         <div className='sub-header-container'>
             <a href= "https://github.com/johnallan78" className="page-subheader-link" target="blank">Code and Docs on GitHub</a>
-            
         </div>
       </div>     
       <div className='main'>
