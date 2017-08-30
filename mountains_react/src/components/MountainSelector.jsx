@@ -1,8 +1,5 @@
 import React from 'react';
 
-import MapContainer from '../container/MapContainer.jsx'
-
-
 class MountainSelector extends React.Component{
 
     constructor(props){
@@ -37,22 +34,15 @@ render(){
     color: 'black'
 
   };
-
-  
-
-
   
   const options = this.props.mountains.map((mountain, index) => {
     return <option value={index} key={index}>{mountain.name} {mountain.height}</option>
   })
   
   return(
-    
-   
     <select style={styles} id="mountain"   onChange={this.handleChange.bind(this)}>
     {options}
     </select>
-    
     );
   }
 

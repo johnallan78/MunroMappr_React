@@ -1,10 +1,6 @@
 import React from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
-
- 
-
-
 export class MapContainerCentral extends React.Component {
 
   constructor(props) {
@@ -17,7 +13,6 @@ export class MapContainerCentral extends React.Component {
      this.onMarkerClick = this.onMarkerClick.bind(this);
    }
 
-
   onMarkerClick(props, marker , e){
     this.setState({
       selectedPlace: props,
@@ -27,7 +22,6 @@ export class MapContainerCentral extends React.Component {
   }
 
     render() {
-
       
       var iconBase = 'http://findicons.com/files/icons/2534/aroma/24/pin_location_red.png';
       var markers = this.props.mountains.map((mountain) => {
@@ -41,17 +35,13 @@ export class MapContainerCentral extends React.Component {
           }}
           onClick={this.onMarkerClick}
           icon= {iconBase}
-
-
         />
       })
       
     const style = {
-      
       height: '100%',
       width:  '70%',
       border: '2px solid black',
-      
     }
 
     return (

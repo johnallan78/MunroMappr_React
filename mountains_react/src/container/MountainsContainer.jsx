@@ -8,10 +8,6 @@ import CheckBox from '../components/CheckBox.jsx'
 import CheckBoxCentral from '../components/CheckBoxCentral.jsx'
 import WeatherComponent from '../components/WeatherComponent.jsx'
 
-
-
-
-
 class MountainsContainer extends React.Component{
 
   constructor(props){
@@ -66,10 +62,8 @@ class MountainsContainer extends React.Component{
       <header className='page-header'>
         <div className= 'header-container'>
           <h1>Munro Mappr &trade; </h1>
-
           <p>Find out where to bag your next Munro, plan a trip, bag a biggie and tick it off!</p>
         </div>
-        
       </header> 
       <div className='sub-header'>
         <div className='sub-header-container'>
@@ -77,7 +71,6 @@ class MountainsContainer extends React.Component{
         </div>
       </div>     
       <div className='main'>
-
       <div className='checkbox-and-menu'>
           <div className="mountain-selector">
              <MountainSelector
@@ -96,18 +89,13 @@ class MountainsContainer extends React.Component{
          />
        </div>
       </div>
-       
       <div className= "map-container">
       <MapContainer 
         initialLat={this.state.initialLat} 
         initialLng={this.state.initialLng} 
         mountains={this.state.mountains}
         mountain={this.setMountain.bind(this)}
-        selectedMountainLat={this.state.selectedMountainLat}
-        selectedMountainLng={this.state.selectedMountainLng}
-
       />
-      
       <div className= "map-container-central">
       <MapContainerCentral 
         initialLat={this.state.initialLat} 
@@ -117,9 +105,6 @@ class MountainsContainer extends React.Component{
       />
       </div>
       </div>
-
-        
-
       </div>
       <footer className='page-footer'>
         <div className='footer-container'>
@@ -128,8 +113,7 @@ class MountainsContainer extends React.Component{
       </footer>   
       </div>
     );
-
-}
+  }
 }
 
 export default MountainsContainer;
